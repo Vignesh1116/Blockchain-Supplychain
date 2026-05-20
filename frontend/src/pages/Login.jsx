@@ -101,7 +101,7 @@ const Login = () => {
           
           <motion.h1 
             layout
-            className="text-3xl font-black bg-clip-text text-transparent bg-gradient-to-r from-white via-white to-white/50 tracking-tighter"
+            className="text-4xl font-black bg-clip-text text-transparent bg-gradient-to-r from-white via-white to-white/50 tracking-tighter"
           >
             CHAINIQ <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00c8b4] to-[#0066ff]">PRO</span>
           </motion.h1>
@@ -112,7 +112,7 @@ const Login = () => {
               initial={{ opacity: 0, y: -5 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: 5 }}
-              className="text-slate-400 mt-2 text-xs font-semibold font-mono uppercase tracking-widest text-center"
+              className="text-slate-400 mt-2 text-sm font-semibold font-mono uppercase tracking-widest text-center"
             >
               {isRegisterMode ? 'Consensus Registry Enrollment' : 'Secure Global Ledger Access'}
             </motion.p>
@@ -129,15 +129,15 @@ const Login = () => {
                 transition={{ duration: 0.3 }}
                 className="space-y-1 overflow-hidden"
               >
-                <label className="text-[10px] font-bold text-slate-400 ml-1 uppercase tracking-widest font-mono">Agent Full Name</label>
+                <label className="text-[11px] font-bold text-slate-400 ml-1 uppercase tracking-widest font-mono">Agent Full Name</label>
                 <div className="relative group">
                   <div className="absolute inset-y-0 left-0 flex items-center pl-4 pointer-events-none">
-                    <User className="w-4 h-4 text-slate-500 group-focus-within:text-[#00c8b4] transition-colors" />
+                    <User className="w-4.5 h-4.5 text-slate-500 group-focus-within:text-[#00c8b4] transition-colors" />
                   </div>
                   <input
                     type="text"
                     required={isRegisterMode}
-                    className="w-full bg-[#04070f]/50 border border-white/10 rounded-xl py-3 pl-10 pr-4 text-white placeholder-slate-600 focus:outline-none focus:border-[#00c8b4]/50 focus:bg-[#04070f]/80 transition-all font-mono text-xs shadow-inner"
+                    className="w-full bg-[#04070f]/50 border border-white/10 rounded-xl py-3.5 pl-11 pr-4 text-white placeholder-slate-600 focus:outline-none focus:border-[#00c8b4]/50 focus:bg-[#04070f]/80 transition-all font-mono text-sm shadow-inner"
                     placeholder="Enter Full Name"
                     value={name}
                     onChange={(e) => setName(e.target.value)}
@@ -148,15 +148,15 @@ const Login = () => {
           </AnimatePresence>
 
           <div className="space-y-1">
-            <label className="text-[10px] font-bold text-slate-400 ml-1 uppercase tracking-widest font-mono">Agent ID / Email</label>
+            <label className="text-[11px] font-bold text-slate-400 ml-1 uppercase tracking-widest font-mono">Agent ID / Email</label>
             <div className="relative group">
               <div className="absolute inset-y-0 left-0 flex items-center pl-4 pointer-events-none">
-                <Mail className="w-4 h-4 text-slate-500 group-focus-within:text-[#00c8b4] transition-colors" />
+                <Mail className="w-4.5 h-4.5 text-slate-500 group-focus-within:text-[#00c8b4] transition-colors" />
               </div>
               <input
                 type="email"
                 required
-                className="w-full bg-[#04070f]/50 border border-white/10 rounded-xl py-3 pl-10 pr-4 text-white placeholder-slate-600 focus:outline-none focus:border-[#00c8b4]/50 focus:bg-[#04070f]/80 transition-all font-mono text-xs shadow-inner"
+                className="w-full bg-[#04070f]/50 border border-white/10 rounded-xl py-3.5 pl-11 pr-4 text-white placeholder-slate-600 focus:outline-none focus:border-[#00c8b4]/50 focus:bg-[#04070f]/80 transition-all font-mono text-sm shadow-inner"
                 placeholder="agent@chainiq.network"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
@@ -165,15 +165,15 @@ const Login = () => {
           </div>
 
           <div className="space-y-1">
-            <label className="text-[10px] font-bold text-slate-400 ml-1 uppercase tracking-widest font-mono">Security Phrase</label>
+            <label className="text-[11px] font-bold text-slate-400 ml-1 uppercase tracking-widest font-mono">Security Phrase</label>
             <div className="relative group">
               <div className="absolute inset-y-0 left-0 flex items-center pl-4 pointer-events-none">
-                <Lock className="w-4 h-4 text-slate-500 group-focus-within:text-[#a855f7] transition-colors font-mono" />
+                <Lock className="w-4.5 h-4.5 text-slate-500 group-focus-within:text-[#a855f7] transition-colors font-mono" />
               </div>
               <input
                 type="password"
                 required
-                className="w-full bg-[#04070f]/50 border border-white/10 rounded-xl py-3 pl-10 pr-4 text-white placeholder-slate-600 focus:outline-none focus:border-[#a855f7]/50 focus:bg-[#04070f]/80 transition-all font-mono text-xs shadow-inner"
+                className="w-full bg-[#04070f]/50 border border-white/10 rounded-xl py-3.5 pl-11 pr-4 text-white placeholder-slate-600 focus:outline-none focus:border-[#a855f7]/50 focus:bg-[#04070f]/80 transition-all font-mono text-sm shadow-inner"
                 placeholder="••••••••••••"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
@@ -188,8 +188,8 @@ const Login = () => {
             className="w-full relative overflow-hidden group rounded-xl p-[1px] mt-6"
           >
             <span className="absolute inset-0 bg-gradient-to-r from-[#00c8b4] via-[#0066ff] to-[#a855f7] rounded-xl opacity-80 group-hover:opacity-100 transition-opacity" />
-            <div className="relative flex items-center justify-center gap-3 bg-[#04070f] py-3 rounded-[11px] group-hover:bg-transparent transition-colors duration-300">
-              <span className="text-white font-black uppercase tracking-widest text-xs font-mono flex items-center gap-2">
+            <div className="relative flex items-center justify-center gap-3 bg-[#04070f] py-3.5 rounded-[11px] group-hover:bg-transparent transition-colors duration-300">
+              <span className="text-white font-black uppercase tracking-widest text-sm font-mono flex items-center gap-2">
                 {isRegisterMode ? 'Enroll Agent' : 'Authenticate Session'}{' '}
                 <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
               </span>
@@ -205,7 +205,7 @@ const Login = () => {
               setEmail('');
               setPassword('');
             }}
-            className="text-xs text-[#00c8b4] hover:text-[#0066ff] font-bold font-mono transition-colors focus:outline-none hover:underline"
+            className="text-sm text-[#00c8b4] hover:text-[#0066ff] font-bold font-mono transition-colors focus:outline-none hover:underline"
           >
             {isRegisterMode 
               ? 'Already registered? Authenticate here' 

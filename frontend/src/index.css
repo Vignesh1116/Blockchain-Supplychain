@@ -14,8 +14,8 @@
   --color-nexus-neon-rose: #f43f5e;
   
   --font-nexus-display: "Space Grotesk", sans-serif;
-  --font-nexus-sans: "Inter", sans-serif;
-  --font-nexus-mono: "JetBrains Mono", monospace;
+  --font-nexus-sans: "Plus Jakarta Sans", sans-serif;
+  --font-nexus-mono: "Space Mono", monospace;
 
   --animate-pulse-slow: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
   --animate-float: float 6s ease-in-out infinite;
