@@ -16,27 +16,46 @@ import AddProduct from './pages/AddProduct';
 import Terminal from './pages/Terminal';
 import RealTimeMonitoring from './pages/RealTimeMonitoring';
 import Settings from './pages/Settings';
+import Login from './pages/Login';
+
+const ProtectedRoute = ({ children }) => {
+  const isAuthenticated = localStorage.getItem('isAuthenticated') === 'true';
+  return isAuthenticated ? children : <Navigate to="/login" replace />;
+};
 
 const App = () => {
   return (
     <Router>
-      <NexusLayout>
-        <Routes>
-          <Route path="/" element={<Dashboard />} />
-          <Route path="/logistics" element={<LogisticsNetwork />} />
-          <Route path="/ai-engine" element={<AIEngine />} />
-          <Route path="/digital-twins" element={<DigitalTwins />} />
-          <Route path="/blockchain" element={<BlockchainConsensus />} />
-          <Route path="/security" element={<CyberSecurity />} />
-          <Route path="/add-product" element={<AddProduct />} />
-          <Route path="/terminal" element={<Terminal />} />
-          <Route path="/monitoring" element={<RealTimeMonitoring />} />
-          <Route path="/settings" element={<Settings />} />
-          
-          {/* Fallback */}
-          <Route path="*" element={<Navigate to="/" replace />} />
-        </Routes>
-      </NexusLayout>
+      <Routes>
+        {/* Public Login Route */}
+        <Route path="/login" element={<Login />} />
+
+        {/* Protected Dashboard/App Routes */}
+        <Route 
+          path="/*" 
+          element={
+            <ProtectedRoute>
+              <NexusLayout>
+                <Routes>
+                  <Route path="/" element={<Dashboard />} />
+                  <Route path="/logistics" element={<LogisticsNetwork />} />
+                  <Route path="/ai-engine" element={<AIEngine />} />
+                  <Route path="/digital-twins" element={<DigitalTwins />} />
+                  <Route path="/blockchain" element={<BlockchainConsensus />} />
+                  <Route path="/security" element={<CyberSecurity />} />
+                  <Route path="/add-product" element={<AddProduct />} />
+                  <Route path="/terminal" element={<Terminal />} />
+                  <Route path="/monitoring" element={<RealTimeMonitoring />} />
+                  <Route path="/settings" element={<Settings />} />
+                  
+                  {/* Fallback */}
+                  <Route path="*" element={<Navigate to="/" replace />} />
+                </Routes>
+              </NexusLayout>
+            </ProtectedRoute>
+          } 
+        />
+      </Routes>
       
       {/* Global Toast Notifications */}
       <Toaster 

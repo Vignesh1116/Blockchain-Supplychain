@@ -18,7 +18,7 @@ import {
   LogOut,
   Satellite
 } from 'lucide-react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import AiCopilot from './AiCopilot';
 import toast from 'react-hot-toast';
 
@@ -51,6 +51,13 @@ const NexusLayout = ({ children }) => {
   const [collapsed, setCollapsed] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    localStorage.removeItem('isAuthenticated');
+    toast.success('Logged out successfully.');
+    navigate('/login');
+  };
   const [isNotificationsOpen, setIsNotificationsOpen] = useState(false);
   const [notifications, setNotifications] = useState([
     { id: 1, title: 'Consensus Reached', desc: 'Block #402,129 verified by 12 nodes.', time: '2m ago', read: false, type: 'info' },
@@ -158,7 +165,13 @@ const NexusLayout = ({ children }) => {
                 <span className="text-[10px] text-nexus-neon-emerald font-mono uppercase">Status: Online</span>
               </div>
             )}
-            {!collapsed && <LogOut size={16} className="text-slate-500 cursor-pointer hover:text-nexus-neon-rose transition-colors" />}
+            {!collapsed && (
+              <LogOut 
+                size={16} 
+                onClick={handleLogout}
+                className="text-slate-500 cursor-pointer hover:text-nexus-neon-rose transition-colors" 
+              />
+            )}
           </div>
         </div>
       </motion.aside>
