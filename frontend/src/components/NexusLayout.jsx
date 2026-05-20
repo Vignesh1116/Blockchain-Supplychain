@@ -52,6 +52,7 @@ const NexusLayout = ({ children }) => {
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
+  const userName = localStorage.getItem('userName') || 'EXECUTIVE_ALPHA';
 
   const handleLogout = () => {
     localStorage.removeItem('isAuthenticated');
@@ -161,7 +162,7 @@ const NexusLayout = ({ children }) => {
             </div>
             {!collapsed && (
               <div className="flex flex-col flex-1 min-w-0">
-                <span className="text-xs font-bold text-white truncate">EXECUTIVE_ALPHA</span>
+                <span className="text-xs font-bold text-white truncate">{userName}</span>
                 <span className="text-[10px] text-nexus-neon-emerald font-mono uppercase">Status: Online</span>
               </div>
             )}
