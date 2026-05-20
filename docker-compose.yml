@@ -1,0 +1,72 @@
+version: '3.8'
+
+services:
+  # Database Service
+  db:
+    image: postgres:15-alpine
+    container_name: chainsecure-db
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: password123
+      POSTGRES_DB: supply_chain
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - chainsecure-network
+
+  # Blockchain Node (Ganache)
+  ganache:
+    image: trufflesuite/ganache:latest
+    container_name: chainsecure-blockchain
+    ports:
+      - "8545:8545"
+    command: ["--db", "/app/ganache_data", "--wallet.seed", "shrine", "--server.port", "8545", "--server.host", "0.0.0.0"]
+    volumes:
+      - ganache_data:/app/ganache_data
+    networks:
+      - chainsecure-network
+
+  # FastAPI Backend Service
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile.backend
+    container_name: chainsecure-backend
+    ports:
+      - "8001:8001"
+    environment:
+      - DB_HOST=db
+      - DB_NAME=supply_chain
+      - DB_USER=admin
+      - DB_PASSWORD=password123
+      - GANACHE_URL=http://ganache:8545
+    depends_on:
+      - db
+      - ganache
+    networks:
+      - chainsecure-network
+
+  # React Frontend Service
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile.frontend
+    container_name: chainsecure-frontend
+    ports:
+      - "5173:80"
+    environment:
+      - VITE_API_URL=http://localhost:8001
+    depends_on:
+      - backend
+    networks:
+      - chainsecure-network
+
+networks:
+  chainsecure-network:
+    driver: bridge
+
+volumes:
+  postgres_data:
+  ganache_data:

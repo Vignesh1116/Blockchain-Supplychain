@@ -1,0 +1,20 @@
+# Python virtual env
+venv/
+__pycache__/
+*.pyc
+
+# Node
+node_modules/
+dist/
+frontend/node_modules/
+frontend/dist/
+
+# Gemini / Antigravity files
+.gemini/
+.system_generated/
+*.log
+
+# Databases & local configs
+*.db
+database/*.db
+.env
