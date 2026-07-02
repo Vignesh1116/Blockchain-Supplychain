@@ -13,8 +13,8 @@ import numpy as np
 # Load models for real-time simulation
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 ROOT_DIR = os.path.dirname(os.path.dirname(BASE_DIR))
-FRAUD_MODEL_PATH = os.path.join(ROOT_DIR, "fraud_model.pkl")
-RISK_MODEL_PATH = os.path.join(ROOT_DIR, "risk_model.pkl")
+FRAUD_MODEL_PATH = os.path.join(ROOT_DIR, "ml_models", "models", "fraud_model.pkl")
+RISK_MODEL_PATH = os.path.join(ROOT_DIR, "ml_models", "models", "risk_model.pkl")
 
 fraud_model = None
 risk_model = None

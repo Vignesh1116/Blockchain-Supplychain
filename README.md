@@ -28,12 +28,13 @@
 
 ## 🚀 How to Run Locally
 
-### 1. Start the AI Backend Server
+### 1. Start the Backend Server
 ```bash
 # Ensure your virtual environment is activated
-python fraud_api_service.py
+cd backend
+uvicorn app.main:app --reload
 ```
-*(The API will run locally, providing endpoints for ML predictions)*
+*(The API will run locally, providing endpoints and WebSockets for the application)*
 
 ### 2. Start the Frontend Dashboard
 ```bash
