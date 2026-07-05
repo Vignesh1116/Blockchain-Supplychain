@@ -1,11 +1,11 @@
-# 🌐 CHAINIQ PRO: Next-Gen Blockchain Supply Chain & AI Intelligence
+#  CHAINIQ PRO: Next-Gen Blockchain Supply Chain & AI Intelligence
 ### Autonomous Fraud Detection | Immutable Ledger | Real-time Predictive Analytics
 
 **CHAINIQ PRO** (formerly SupplyTraceAI) is an enterprise-grade, advanced supply chain management platform that seamlessly integrates **Distributed Ledger Technology (Blockchain)** with **Supervised Machine Learning (AI)**. Designed for final-year research and startup pitches, it provides unparalleled transparency, fraud detection, and predictive tracking for global logistics network.
 
 ---
 
-## 🔥 Key Features :
+##  Key Features :
 
 1. **Ultra-Premium Glassmorphism UI**: A visually stunning, state-of-the-art dashboard built with React, Tailwind CSS v4, and Framer Motion for smooth, next-gen animations.
 2. **AI-Powered Fraud Detection**: Uses a Random Forest Machine Learning model to evaluate transaction anomalies, delay risks, and pricing mismatches in real-time.
