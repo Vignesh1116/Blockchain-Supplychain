@@ -5,7 +5,7 @@
 
 ---
 
-##  Key Features :
+##  Key Features 
 
 1. **Ultra-Premium Glassmorphism UI**: A visually stunning, state-of-the-art dashboard built with React, Tailwind CSS v4, and Framer Motion for smooth, next-gen animations.
 2. **AI-Powered Fraud Detection**: Uses a Random Forest Machine Learning model to evaluate transaction anomalies, delay risks, and pricing mismatches in real-time.
