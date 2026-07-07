@@ -8,7 +8,7 @@
 ##  Key Features 
 
 1. **Ultra-Premium Glassmorphism UI**: A visually stunning, state-of-the-art dashboard built with React, Tailwind CSS v4, and Framer Motion for smooth, next-gen animations
-2. **AI-Powered Fraud Detection**: Uses a Random Forest Machine Learning model to evaluate transaction anomalies, delay risks, and pricing mismatches in real-time.
+2. **AI-Powered Fraud Detection**: Uses a Random Forest Machine Learning model to evaluate transaction anomalies, delay risks, and pricing mismatches in real-time
 3. **Immutable Blockchain Ledger**: Every shipment, transaction, and node activity is recorded on a simulated blockchain network, making tampering impossible.
 4. **Real-time Global Logistics Mesh**: Live tracking of global nodes (Shanghai, Mumbai, Rotterdam) with real-time updates and interactive mapping.
 5. **Smart Contracts**: Automated execution of supplier agreements based on real-world triggers (e.g., shipment arrival, temperature breaches).
